@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fibonacci-detector/static/css/main.abf59087.chunk.css",
+    "main.js": "/fibonacci-detector/static/js/main.4f39fe96.chunk.js",
+    "main.js.map": "/fibonacci-detector/static/js/main.4f39fe96.chunk.js.map",
+    "runtime-main.js": "/fibonacci-detector/static/js/runtime-main.1bb42e18.js",
+    "runtime-main.js.map": "/fibonacci-detector/static/js/runtime-main.1bb42e18.js.map",
+    "static/js/2.5386a959.chunk.js": "/fibonacci-detector/static/js/2.5386a959.chunk.js",
+    "static/js/2.5386a959.chunk.js.map": "/fibonacci-detector/static/js/2.5386a959.chunk.js.map",
+    "index.html": "/fibonacci-detector/index.html",
+    "precache-manifest.a073f38f81edf44b86b21ab0f6c96ce4.js": "/fibonacci-detector/precache-manifest.a073f38f81edf44b86b21ab0f6c96ce4.js",
+    "service-worker.js": "/fibonacci-detector/service-worker.js",
+    "static/css/main.abf59087.chunk.css.map": "/fibonacci-detector/static/css/main.abf59087.chunk.css.map",
+    "static/js/2.5386a959.chunk.js.LICENSE.txt": "/fibonacci-detector/static/js/2.5386a959.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1bb42e18.js",
+    "static/js/2.5386a959.chunk.js",
+    "static/css/main.abf59087.chunk.css",
+    "static/js/main.4f39fe96.chunk.js"
+  ]
+}
