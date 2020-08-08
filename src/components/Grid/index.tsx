@@ -1,19 +1,19 @@
 import React, { ReactElement, useState, MouseEvent, useRef } from "react";
 import Cell from "./Cell";
-import { getEmptyGrid, incrementGridRowColumn } from "./grid.helper";
+import {
+  getEmptyGrid,
+  incrementGridRowColumn,
+  detectAndResetFibonacciSequence,
+  COLORS,
+} from "./grid.helper";
 import { GridProps } from "./types";
 
 import "./grid.styles.css";
 
-const COLORS = {
-  default: "rgba(0,0,0,0.13)",
-  onIncrement: "yellow",
-  onReset: "green",
-};
-
 export default function Grid({
-  numberOfRows = 50,
-  numberOfColumns = 50,
+  numberOfRows = 20,
+  numberOfColumns = 20,
+  sequenceLength = 4,
 }: GridProps): ReactElement {
   const [grid, setGrid] = useState<Array<Array<number>>>(
     getEmptyGrid({ numberOfRows, numberOfColumns })
@@ -25,16 +25,20 @@ export default function Grid({
     event.stopPropagation();
     const clickedCell = event.target as any;
     if (clickedCell.id) {
-      const [clickedRow, clickedColumn] = clickedCell.id.split("_");
       if (timeoutHandle.current) clearTimeout(timeoutHandle.current);
-      setClickedCell({ row: +clickedRow, column: +clickedColumn });
+
+      const [row, column] = clickedCell.id.split("_").map(Number);
+
+      setClickedCell({ row, column });
       setGrid(
-        incrementGridRowColumn({
-          grid,
-          row: Number(clickedRow),
-          column: Number(clickedColumn),
+        detectAndResetFibonacciSequence({
+          grid: incrementGridRowColumn({ grid, row, column }),
+          changedColumn: column,
+          changedRow: row,
+          sequenceLength,
         })
       );
+
       timeoutHandle.current = setTimeout(() => {
         setClickedCell({ row: -1, column: -1 });
       }, 500);

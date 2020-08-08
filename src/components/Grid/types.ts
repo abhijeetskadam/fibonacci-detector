@@ -3,6 +3,7 @@ export type Grid = Array<Array<number>>;
 export interface GridProps {
   numberOfRows?: number;
   numberOfColumns?: number;
+  sequenceLength?: number;
 }
 
 export interface CellProps {
@@ -21,3 +22,21 @@ export interface GridCell {
   row: number;
   column: number;
 }
+
+export interface ResetFibonacciSequenceParams {
+  grid: Grid;
+  changedRow: number;
+  changedColumn: number;
+  sequenceLength: number;
+}
+
+export interface DetectFibonacciSequenceParams {
+  startIndexRow: number;
+  endIndexRow: number;
+  startIndexColumn: number;
+  endIndexColumn: number;
+}
+
+export type DetectAndResetFibonacciSequenceParams = ResetFibonacciSequenceParams &
+  DetectFibonacciSequenceParams &
+  GridShape;
